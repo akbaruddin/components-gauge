@@ -1,7 +1,7 @@
 {
-  "name": "component-gauge",
+  "name": "components-gauge",
   "license": "MIT",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -10,7 +10,8 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.10",
@@ -25,6 +26,7 @@
     "@storybook/builder-webpack4": "^6.5.10",
     "@storybook/manager-webpack4": "^6.5.10",
     "@storybook/react": "^6.5.10",
+    "@storybook/storybook-deployer": "^2.8.12",
     "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
@@ -40,5 +42,12 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "reactjs-component",
+    "component",
+    "gauge"
+  ]
 }
