@@ -2,5 +2,4 @@
 
 Simple React Component to create Gauge.
 
-Example: 
-
+Demo: <https://akbaruddin.github.io/component-guage/>
