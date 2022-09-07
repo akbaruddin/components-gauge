@@ -1,0 +1,14 @@
+.right-side {
+  transform: translate3d(26%, 20%, 0);
+}
+
+.right-side-post {
+  transform: translate3d(72%, 86%, 0);
+  font-size: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+    Helvetica, Arial, sans-serif;
+}
+
+.small-little {
+  transform: scale(0.9,0.9) translate3d(5.5px, 5.5px, 0);
+}
