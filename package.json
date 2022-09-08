@@ -1,7 +1,7 @@
 {
   "name": "components-gauge",
   "license": "MIT",
-  "version": "0.0.1-0",
+  "version": "0.0.1-1",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -49,5 +49,23 @@
     "reactjs-component",
     "component",
     "gauge"
-  ]
+  ],
+  "description": "Simple React Component to create Gauge.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akbaruddin/components-guage.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/akbaruddin/components-guage/issues"
+  },
+  "homepage": "https://github.com/akbaruddin/components-guage#readme",
+  "volta": {
+    "node": "16.17.0",
+    "npm": "8.19.1"
+  },
+  "engines": {
+    "node": ">=16",
+    "npm": ">=8.19.1"
+  }
 }
