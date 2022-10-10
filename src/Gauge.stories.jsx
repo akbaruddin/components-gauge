@@ -1,6 +1,6 @@
 import React from "react";
 
-import Gauge from "../components/Gauge";
+import Gauge from "./Gauge";
 import "./style.css"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

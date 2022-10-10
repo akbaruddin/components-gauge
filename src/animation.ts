@@ -10,7 +10,15 @@
  *  easing: function // The easing function. Default is easeInOutCubic
  * }
  */
-function Animation(options, requestAnimationFrame) {
+function Animation(options: any) {
+  const requestAnimationFrames =
+    window.requestAnimationFrame ||
+    (<any>window).mozRequestAnimationFrame ||
+    (<any>window).webkitRequestAnimationFrame ||
+    (<any>window).msRequestAnimationFrame ||
+    function (cb) {
+      return setTimeout(cb, 1000 / 60);
+    };
   const duration = options.duration;
   let currentIteration = 1;
   const iterations = 60 * duration;
@@ -20,7 +28,7 @@ function Animation(options, requestAnimationFrame) {
   const step = options.step;
   const easing =
     options.easing ||
-    function easeInOutCubic(pos) {
+    function easeInOutCubic(pos: number) {
       // https://github.com/danro/easing-js/blob/master/easing.js
       if ((pos /= 0.5) < 1) return 0.5 * Math.pow(pos, 3);
       return 0.5 * (Math.pow(pos - 2, 3) + 2);
@@ -34,11 +42,11 @@ function Animation(options, requestAnimationFrame) {
     currentIteration += 1;
 
     if (progress < 1) {
-      requestAnimationFrame(animate);
+      requestAnimationFrames(animate);
     }
   }
   // start!
-  requestAnimationFrame(animate);
+  requestAnimationFrames(animate);
 }
 
 export default Animation;

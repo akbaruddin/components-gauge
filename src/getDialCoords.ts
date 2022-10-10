@@ -3,7 +3,10 @@ import getCartesian from "./getCartesian";
 // Returns start and end points for dial
 // i.e. starts at 135deg ends at 45deg with large arc flag
 // REMEMBER!! angle=0 starts on X axis and then increases clockwise
-function getDialCoords(radius, startAngle, endAngle, gaugeDefaults) {
+function getDialCoords(radius: number, startAngle: number, endAngle: number, gaugeDefaults: {
+  centerX: number,
+  centerY: number
+}) {
   let cx = gaugeDefaults.centerX;
   let cy = gaugeDefaults.centerY;
 

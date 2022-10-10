@@ -3,7 +3,6 @@ import Animation from "./animation";
 import { normalize } from "./utils";
 import pathString from "./pathString";
 import { getAngle, getValueInPercentage } from "./utils";
-import useGaugeWindow from "./use-gauge-window";
 
 const scaled = {
   transformOrigin: "center center",
@@ -29,7 +28,7 @@ const initState = {
   time: 10000,
 };
 
-const reducer = (state, action) => {
+const reducer = (state: any, action: any) => {
   if (action.type === "VALUE") {
     return {
       ...state,
@@ -41,7 +40,7 @@ const reducer = (state, action) => {
   return state;
 };
 
-const Gauge = (props) => {
+const Gauge = (props: any) => {
   const {
     animated = true,
     width = 200,
@@ -52,7 +51,7 @@ const Gauge = (props) => {
     filledColor = "#666",
     textColor = "#999",
     radius = 40,
-    label = (value) => Math.round(value * 100) / 100,
+    label = (value: number) => Math.round(value * 100) / 100,
     time = 10000,
     showValue = false,
     min = 0,
@@ -71,7 +70,6 @@ const Gauge = (props) => {
     frame = 1,
     fullCircle = false,
   } = props;
-  const { requestAnimationFrame } = useGaugeWindow();
   const [state, dispatch] = useReducer(reducer, {
     ...initState,
     radius,
@@ -95,8 +93,8 @@ const Gauge = (props) => {
   const [text, setText] = useState(null);
   const gaugeContainer = useRef(null);
   const gaugeValueElem = useRef(null);
-  const gaugeValuePath = useRef(null);
-  const timer = useRef(null);
+  const gaugeValuePath = useRef<SVGPathElement | null>(null);
+  const timer: { current: NodeJS.Timeout | null } = useRef(null);
   const oldValueRef = useRef(0);
   const [base, setBase] = useState("");
   const [baseTop, setBaseTop] = useState("");
@@ -106,7 +104,7 @@ const Gauge = (props) => {
     centerY: 50,
   });
 
-  const updateGauge = (theValue, frame) => {
+  const updateGauge = (theValue: number, frame?: any) => {
     const val = getValueInPercentage(theValue, state.min, state.limit);
     const angle = getAngle(
       val,
@@ -128,16 +126,18 @@ const Gauge = (props) => {
     );
   };
 
-  const setGaugeColor = (value, duration) => {
+  const setGaugeColor = (value: number, duration: number) => {
     const c = state.gaugeColor.call(state, value);
     const dur = duration * 1000;
     const pathTransition = "stroke " + dur + "ms ease";
     // const textTransition = "fill " + dur + "ms ease";
 
-    gaugeValuePath.current.style.stroke = c;
-    gaugeValuePath.current.style["-webkit-transition"] = pathTransition;
-    gaugeValuePath.current.style["-moz-transition"] = pathTransition;
-    gaugeValuePath.current.style.transition = pathTransition;
+    if (gaugeValuePath.current) {
+      gaugeValuePath.current.style.stroke = c;
+      gaugeValuePath.current.style["-webkit-transition" as any] = pathTransition;
+      gaugeValuePath.current.style["-moz-transition" as any] = pathTransition;
+      gaugeValuePath.current.style.transition = pathTransition;
+    }
     // gaugeValueElem.current.style = [
     //   "fill: " + c,
     //   "-webkit-transition: " + textTransition,
@@ -146,7 +146,7 @@ const Gauge = (props) => {
     // ].join(";");
   };
 
-  const setValue = (val) => {
+  const setValue = (val: number) => {
     const newValue = normalize(val, state.min, state.limit);
     dispatch({ type: "VALUE", payload: newValue });
     if (state.gaugeColor) {
@@ -155,7 +155,7 @@ const Gauge = (props) => {
     updateGauge(newValue);
   };
 
-  const setValueAnimated = (val, duration, callback = () => {}) => {
+  const setValueAnimated = (val: number, duration: number, callback = () => {}) => {
     const oldValue = oldValueRef.current;
     const newValue = normalize(val, state.min, state.limit);
     if (oldValue === newValue) {
@@ -170,11 +170,10 @@ const Gauge = (props) => {
         start: oldValue || 0,
         end: newValue,
         duration: duration || 1,
-        step: (val, frame) => {
+        step: (val: number, frame: number) => {
           updateGauge(val, frame);
         },
-      },
-      requestAnimationFrame
+      }
     );
     dispatch({ type: "VALUE", payload: newValue });
     oldValueRef.current = newValue;
@@ -213,7 +212,7 @@ const Gauge = (props) => {
     let endTime = 0;
     timer.current = setInterval(() => {
       if (endTime >= totalTime) {
-        clearInterval(timer.current);
+        clearInterval(timer.current as NodeJS.Timeout);
         onEnd();
       } else {
         endTime += 1;
@@ -230,7 +229,7 @@ const Gauge = (props) => {
     }, 1000);
 
     return () => {
-      clearInterval(timer.current);
+      clearInterval(timer.current as NodeJS.Timeout);
     };
   }, []);
 

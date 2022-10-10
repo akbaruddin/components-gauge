@@ -6,7 +6,7 @@
  * @param angle {Number} The angle in degrees
  * @return An object with x,y co-ordinates
  */
-function getCartesian(cx, cy, radius, angle) {
+function getCartesian(cx: number, cy: number, radius: number, angle: number) {
   let rad = (angle * Math.PI) / 180;
   return {
     x: Math.round((cx + radius * Math.cos(rad)) * 1000) / 1000,

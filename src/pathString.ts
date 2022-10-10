@@ -1,6 +1,6 @@
 import getDialCoords from "./getDialCoords";
 
-function pathString(gaugeDefaults, radius, startAngle, endAngle, largeArc) {
+function pathString(gaugeDefaults: any, radius: number, startAngle: number, endAngle: number, largeArc?: number) {
   let coords = getDialCoords(radius, startAngle, endAngle, gaugeDefaults);
   let start = coords.start;
   let end = coords.end;

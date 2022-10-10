@@ -1,0 +1,10 @@
+dist
+.storybook
+.husky
+.github
+.vscode
+node_modules
+example
+package-lock.json
+package.json
+index.html
