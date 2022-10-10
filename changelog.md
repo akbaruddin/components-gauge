@@ -1,5 +1,7 @@
 
 
+## [0.0.35](https://github.com/akbaruddin/components-gauge/compare/0.0.34...0.0.35) (2022-10-10)
+
 ## 0.0.34 (2022-10-10)
 
 

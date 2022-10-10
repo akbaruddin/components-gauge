@@ -1,7 +1,7 @@
 {
   "name": "components-gauge",
   "license": "MIT",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "type": "module",
   "main": "./dist/components-gauge.umd.js",
   "module": "./dist/components-gauge.es.js",
