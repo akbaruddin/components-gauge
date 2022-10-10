@@ -62,13 +62,13 @@
   "description": "Simple React Component to create Gauge.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/akbaruddin/components-guage.git"
+    "url": "git+https://github.com/akbaruddin/components-gauge.git"
   },
   "author": "",
   "bugs": {
-    "url": "https://github.com/akbaruddin/components-guage/issues"
+    "url": "https://github.com/akbaruddin/components-gauge/issues"
   },
-  "homepage": "https://github.com/akbaruddin/components-guage#readme",
+  "homepage": "https://github.com/akbaruddin/components-gauge#readme",
   "volta": {
     "node": "16.17.0",
     "npm": "8.19.1"
@@ -92,5 +92,8 @@
     "*.{js,json,css,md,tsx,ts}": [
       "prettier --write"
     ]
+  },
+  "directories": {
+    "example": "example"
   }
 }
