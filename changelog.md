@@ -1,5 +1,12 @@
 
 
+## [0.0.41](https://github.com/akbaruddin/components-gauge/compare/0.0.40...0.0.41) (2023-01-11)
+
+
+### Bug Fixes
+
+* broken cammand ([5c2e4dc](https://github.com/akbaruddin/components-gauge/commit/5c2e4dcd120192e2c0a8b762a719b85ec961d647))
+
 ## [0.0.40](https://github.com/akbaruddin/components-gauge/compare/0.0.35...0.0.40) (2022-10-11)
 
 ## [0.0.39](https://github.com/akbaruddin/components-gauge/compare/0.0.35...0.0.39) (2022-10-11)
