@@ -5,7 +5,7 @@ import "./style.css"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Example/Gauge",
+  title: "Example",
   component: Gauge,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
