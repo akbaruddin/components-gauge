@@ -7,7 +7,7 @@ Simple React Component to create Gauge.
 ![npm](https://img.shields.io/npm/v/components-gauge?style=for-the-badge)
 ![npm](https://img.shields.io/npm/dw/components-gauge?style=for-the-badge)
 
-Demo: <https://akbaruddin.github.io/components-gauge/>
+Demo: <https://components-gauge.vercel.app/>
 
 ```bash
 # npm

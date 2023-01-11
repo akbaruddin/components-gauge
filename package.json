@@ -69,7 +69,7 @@
   "bugs": {
     "url": "https://github.com/akbaruddin/components-gauge/issues"
   },
-  "homepage": "https://github.com/akbaruddin/components-gauge#readme",
+  "homepage": "https://components-gauge.vercel.app",
   "volta": {
     "node": "16.17.0",
     "npm": "8.19.1"
